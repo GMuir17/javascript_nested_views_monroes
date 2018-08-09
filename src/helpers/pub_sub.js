@@ -5,7 +5,6 @@ const PubSub = {
     });
     document.dispatchEvent(event);
   },
-
   subscribe: function (channel, callback) {
     document.addEventListener(channel, callback);
   }

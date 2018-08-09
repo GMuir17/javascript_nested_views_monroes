@@ -1,3 +1,7 @@
+const Monroes = require("./models/monroes.js");
+
 document.addEventListener('DOMContentLoaded', () => {
-  console.log('JavaScript Loaded');
-})
+
+  const monroes = new Monroes();
+  monroes.bindEvents();
+});
