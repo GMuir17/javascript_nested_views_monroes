@@ -17,12 +17,14 @@ Monroes.prototype.bindEvents = function () {
   PubSub.subscribe('SelectView:selected-monro-index', (evt) =>{
     const monroIndex = evt.detail;
     console.log(monroIndex);
-  const filteredMonroes = this.filterMonroesByRegion(monroIndex);
+    const filteredMonroes = this.filterMonroesByRegion(monroIndex);
     PubSub.publish('Monroes:selected-monroes',filteredMonroes );
   });
 };
 
-
+Monroes.prototype.filterMonroesByRegion = function (index) {
+  // this.
+};
 
 
 

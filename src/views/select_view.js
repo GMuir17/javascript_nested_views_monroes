@@ -17,13 +17,20 @@ SelectView.prototype.bindEvents = function () {
 };
 
 SelectView.prototype.populateDropDown = function (monroes) {
-  monroes.forEach((monro, index) =>{
+  const monroRegions = this.getMonroRegion(monroes)
+
+  monroRegions.forEach((region, index) =>{
     const option = document.createElement('option');
-    option.textContent = monro.region;
+    option.textContent = region;
     option.value = index;
     this.container.appendChild(option);
   })
+};
 
+SelectView.prototype.getMonroRegion = function (monroes) {
+  return monroes
+    .map(monro => monro.region)
+    .filter((region, index, monroes) => monroes.indexOf(region) === index);
 };
 
 module.exports = SelectView;
