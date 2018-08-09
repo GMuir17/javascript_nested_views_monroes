@@ -1,5 +1,5 @@
 const PubSub = require("../helpers/pub_sub.js");
-
+const MonroView = require("./monro_view.js");
 
 const MonroListView = function (container) {
   this.container = container;
@@ -15,7 +15,7 @@ MonroListView.prototype.bindEvents = function () {
 
 MonroListView.prototype.render = function (monroes) {
    monroes.forEach((monro) =>{
-     const monroView = new MonroView(this.container);
+     const monroView = new MonroView(this.container, monro);
      monroView.render();
    });
 
