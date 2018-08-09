@@ -11,18 +11,16 @@ SelectView.prototype.bindEvents = function () {
     this.populateDropDown(monroes);
   });
   this.container.addEventListener('change', (evt) => {
-    const monroIndex = evt.target.value;
-    PubSub.publish('SelectView:selected-monro-index', monroIndex);
+    const monroRegion = evt.target.value;
+    PubSub.publish('SelectView:selected-monro-index', monroRegion);
   });
 };
 
 SelectView.prototype.populateDropDown = function (monroes) {
   const monroRegions = this.getMonroRegion(monroes)
-
-  monroRegions.forEach((region, index) =>{
+  monroRegions.forEach((region) =>{
     const option = document.createElement('option');
     option.textContent = region;
-    option.value = index;
     this.container.appendChild(option);
   })
 };

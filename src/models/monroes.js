@@ -15,15 +15,16 @@ Monroes.prototype.getData = function () {
 
 Monroes.prototype.bindEvents = function () {
   PubSub.subscribe('SelectView:selected-monro-index', (evt) =>{
-    const monroIndex = evt.detail;
-    console.log(monroIndex);
-    const filteredMonroes = this.filterMonroesByRegion(monroIndex);
+    const region = evt.detail;
+    console.log(region);
+    const filteredMonroes = this.filterMonroesByRegion(region);
+    console.log(filteredMonroes);
     PubSub.publish('Monroes:selected-monroes',filteredMonroes );
   });
 };
 
-Monroes.prototype.filterMonroesByRegion = function (index) {
-  // this.
+Monroes.prototype.filterMonroesByRegion = function (region) {
+  return this.monroes.filter(monro => monro.region === region);
 };
 
 
