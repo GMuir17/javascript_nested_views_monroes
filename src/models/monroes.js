@@ -18,7 +18,8 @@ Monroes.prototype.monroDataFormat = function (monroesData) {
     return {
       name: monro.name,
       meaning: monro.meaning,
-      height: monro.height
+      height: monro.height,
+      region: monro.region
     };
   });
 };

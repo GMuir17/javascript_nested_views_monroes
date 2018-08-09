@@ -36,10 +36,6 @@ MonroView.prototype.populateList = function (list) {
     monroListMeaning.textContent = this.monro.meaning;
     list.appendChild(monroListHeight);
     list.appendChild(monroListMeaning);
-
 };
-
-
-
 
 module.exports = MonroView;
