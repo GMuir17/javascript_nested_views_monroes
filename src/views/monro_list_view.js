@@ -10,12 +10,17 @@ MonroListView.prototype.bindEvents = function () {
     const monroes = evt.detail;
     this.render(monroes);
   });
+  PubSub.subscribe('Monroes:selected-monroes', (evt) => {
+    const filteredMonroes = evt.detail;
+    this.render(filteredMonroes);
 
+  });
 };
 
 
 
 MonroListView.prototype.render = function (monroes) {
+  this.container.innerHTML =  "";
    monroes.forEach((monro) =>{
      const monroView = new MonroView(this.container, monro);
      monroView.render();
