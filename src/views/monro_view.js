@@ -32,8 +32,8 @@ MonroView.prototype.populateList = function (list) {
 
     const monroListHeight = document.createElement('li');
     const monroListMeaning = document.createElement('li');
-    monroListHeight.textContent = this.monro.height;
-    monroListMeaning.textContent = this.monro.meaning;
+    monroListHeight.textContent = `${this.monro.name} is ${this.monro.height}m tall`;
+    monroListMeaning.textContent = `${this.monro.name} name means ${this.monro.meaning}`;
     list.appendChild(monroListHeight);
     list.appendChild(monroListMeaning);
 };
