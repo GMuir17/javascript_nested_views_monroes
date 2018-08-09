@@ -10,6 +10,10 @@ SelectView.prototype.bindEvents = function () {
     const monroes = evt.detail;
     this.populateDropDown(monroes);
   });
+  this.container.addEventListener('change', (evt) => {
+    const monroIndex = evt.target.value;
+    PubSub.publish('SelectView:selected-monro-index', monroIndex);
+  });
 };
 
 SelectView.prototype.populateDropDown = function (monroes) {

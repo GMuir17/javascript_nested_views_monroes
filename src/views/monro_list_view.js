@@ -9,9 +9,11 @@ MonroListView.prototype.bindEvents = function () {
   PubSub.subscribe('Monroes:all-data-ready', (evt) => {
     const monroes = evt.detail;
     this.render(monroes);
-
   });
+
 };
+
+
 
 MonroListView.prototype.render = function (monroes) {
    monroes.forEach((monro) =>{

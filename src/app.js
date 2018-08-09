@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const monroes = new Monroes();
   monroes.getData();
+  monroes.bindEvents();
 
 
 });
